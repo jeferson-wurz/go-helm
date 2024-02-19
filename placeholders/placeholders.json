@@ -1,0 +1,17 @@
+{
+  "ReplicaCount": 3,
+  "ImageRepository": "meurepositorio/imagem",
+  "ImageTag": "latest",
+  "ImagePullPolicy": "Always",
+  "ServiceName": "meuservico",
+  "ServiceType": "ClusterIP",
+  "ServicePort": 8080,
+  "IngressEnabled": true,
+  "IngressHost": "meuhost.com",
+  "IngressPath": "caminho",
+  "IngressRewriteTarget": "novo-caminho",
+  "ResourceCPULimit": "500m",
+  "ResourceMemoryLimit": "512Mi",
+  "ResourceCPURequest": "200m",
+  "ResourceMemoryRequest": "256Mi"
+}

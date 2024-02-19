@@ -1,0 +1,29 @@
+# values.yaml.template
+replicaCount: {{.ReplicaCount}}
+
+image:
+  repository: "{{.ImageRepository}}"
+  tag: "{{.ImageTag}}"
+  pullPolicy: {{.ImagePullPolicy}}
+
+service:
+  name: "{{.ServiceName}}"
+  type: "{{.ServiceType}}"
+  port: {{.ServicePort}}
+
+ingress:
+  enabled: {{.IngressEnabled}}
+  hosts:
+    - host: "{{.IngressHost}}"
+      paths: 
+        - "/{{.IngressPath}}"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /{{.IngressRewriteTarget}}
+
+resources:
+  limits:
+    cpu: "{{.ResourceCPULimit}}"
+    memory: "{{.ResourceMemoryLimit}}"
+  requests:
+    cpu: "{{.ResourceCPURequest}}"
+    memory: "{{.ResourceMemoryRequest}}"

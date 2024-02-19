@@ -1,0 +1,29 @@
+# values.yaml.template
+replicaCount: 3
+
+image:
+  repository: "meurepositorio/imagem"
+  tag: "latest"
+  pullPolicy: Always
+
+service:
+  name: "meuservico"
+  type: "ClusterIP"
+  port: 8080
+
+ingress:
+  enabled: true
+  hosts:
+    - host: "meuhost.com"
+      paths: 
+        - "/caminho"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /novo-caminho
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "200m"
+    memory: "256Mi"
